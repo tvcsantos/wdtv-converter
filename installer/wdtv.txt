@@ -1,0 +1,29 @@
+STEP BY STEP
+
+mkvmerge -o out_file source_file --default-track 0 --language 0:por srt_file
+
+mkvextract filename --identify // get id's of dts tracks
+
+mkvextract tracks source_file track_id:out_file
+
+eac3to dts_track_file output_ac3_file -bit_rate -libav // bit_rate = 640
+
+mkvmerge -o out_file -A source_file --default-track 0
+
+
+mkvextract tracks
+mkvextrack timecodes_v2
+eac3to.exe C:\Users\tvcsantos\AppData\Local\Temp\2.dts C:\Users\tvcsantos\AppData\Local\Temp\2.ac3 -640 -libav
+
+C:\Program Files (x86)\MKVtoolnix>mkvmerge -o "D:\Bangkok.Dangerous.2008.BluRay.
+1080p.DTS.x264.dxva-EuReKA.mkv" "D:\Media\Movies\Bangkok.Dangerous.2008.BluRay.1
+080p.DTS.x264.dxva-EuReKA\3. Movie\Bangkok.Dangerous.2008.BluRay.1080p.DTS.x264.
+dxva-EuReKA.mkv" --default-track 0 --language 0:por "D:\Media\Movies\Bangkok.Dan
+gerous.2008.BluRay.1080p.DTS.x264.dxva-EuReKA\3. Movie\Bangkok.Dangerous.2008.Bl
+uRay.1080p.DTS.x264.dxva-EuReKA.srt"
+
+mkvmerge.exe -o D:\Bangkok.Dangerous.2008.BluRay.1080p.AC3.x2
+64.dxva-EuReKA.mkv -d 1 -A D:\Bangkok.Dangerous.2008.BluRay.1080p.DTS.x264.dxva-EuReKA.mkv --default-track 0:yes --track-name "0:AC3
+ - 1536 kbit/sec" --language 0:eng -a 0 C:\Users\tvcsantos\AppData\Local\Temp\2.ac3 --track-order 0:1,1:0,0:3,0:4,0:5
+
+mkvmerge -o "D:\test.mkv" "H:\ER\Season 15\er.s15e01-notv.avi" --default-track 0 --language 0:por "H:\ER\Season 15\er.s15e01-notv.srt"
